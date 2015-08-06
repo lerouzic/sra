@@ -5,10 +5,9 @@ function (sradata, model, start, fixed, FUNtimeseries)
     ans$data <- sradata
     ans$model <- model
     ans$start <- start
-    ans$coefficients <- coef(model)[names(start)]
-    ans$confint <- cbind(summary(ans$model)@coef[, 1] - 2 * summary(ans$model)@coef[, 
-        2], summary(ans$model)@coef[, 1] + 2 * summary(ans$model)@coef[, 
-        2])
+    ans$coefficients <- stats4::coef(model)[names(start)]
+    sumcoef <- stats4::coef(stats4::summary(model))
+    ans$confint <- cbind(sumcoef[,1]-2*sumcoef[,2], sumcoef[,1]+2*sumcoef[,2])
     ans$pred <- list()
     ans$residuals <- list()
     ans$vresiduals <- list()
