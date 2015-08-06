@@ -1,5 +1,5 @@
 logLik.srafit <-
 function (object, ...) 
 {
-    logLik(object$model, ...)
+    stats4::logLik(object$model, ...)
 }

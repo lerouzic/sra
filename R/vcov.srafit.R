@@ -1,5 +1,5 @@
 vcov.srafit <-
 function (object, ...) 
 {
-    vcov(object$model, ...)
+    stats4::vcov(object$model, ...)
 }
