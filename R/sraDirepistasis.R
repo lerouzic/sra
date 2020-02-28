@@ -41,10 +41,10 @@ function (sradata, start = NULL, fixed = NULL, macroE = FALSE,
             logvarepsilon = logvarepsilon, logvarME = logvarME)
     }
     fit.pos <- try(mle(minuslogl = mlewrapper, start = c(start, 
-        list(logepsilon = log(0.1))), fixed = c(fixed, list(logminusepsilon = NA)), 
+        list(logepsilon = log(0.1))), fixed = c(fixed, list(logminusepsilon = -99)), 
         ...))
     fit.neg <- try(mle(minuslogl = mlewrapper, start = c(start, 
-        list(logminusepsilon = log(0.1))), fixed = c(fixed, list(logepsilon = NA)), 
+        list(logminusepsilon = log(0.1))), fixed = c(fixed, list(logepsilon = -99)), 
         ...))
     AIC.neg <- try(AIC(fit.neg), silent = TRUE)
     if (inherits(AIC.neg, "try-error")) {

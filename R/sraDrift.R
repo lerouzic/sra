@@ -23,12 +23,14 @@ function (sradata, start = NULL, fixed = NULL, macroE = FALSE,
     fixed <- default.fixed
     start[is.na(start)] <- sapply(names(start[is.na(start)]), 
         sraStartingvalues, sradata = sradata)
+    fixed[is.na(fixed)] <- sapply(names(fixed[is.na(fixed)]),
+        sraStartingvalues, sradata = sradata)
     mlewrapper <- function(mu0, logvarA0, logvarE0, logNe, logn, 
         logvarM, kc, kg, o, s, logvarME) {
         sraMinuslogL(sradata = sradata, FUNtimeseries = sraTimeseries, 
             mu0 = mu0, logvarA0 = logvarA0, logvarE0 = logvarE0, 
             logNe = logNe, logn = logn, logvarM = logvarM, kc = kc, 
-            kg = kg, o = ifelse(is.na(o), mu0, o), s = s, logvarME = logvarME)
+            kg = kg, o = o, s = s, logvarME = logvarME)
     }
     fit <- mle(minuslogl = mlewrapper, start = start, fixed = fixed, 
         ...)

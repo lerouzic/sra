@@ -1,8 +1,10 @@
 sraEpiTimeseries <-
 function (beta, delta = rep(0, length(beta)), mu0 = 0, logvarA0 = 0, 
     logvarE0 = 0, logNe = log(1000), logvarM = log(1e-20), logepsilon = 0, 
-    logminusepsilon = NA, logvarepsilon = 0) 
+    logminusepsilon = -99, logvarepsilon = 0) 
 {
+    if (logepsilon == -99) logepsilon <- NA
+    if (logminusepsilon == -99) logminusepsilon <- NA
     ans <- list()
     if (is.na(logepsilon) && is.na(logminusepsilon)) {
         stop("Either positive or negative epsilon must be considered")
