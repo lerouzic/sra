@@ -29,7 +29,7 @@ sraTimeseries(beta, delta=rep(0, length(beta)), mu0=0, logvarA0=0, logvarE0=0,
 	logNe=log(100), logn=log(1e+10), logvarM=log(1e-20), kc=0, kg=0, o=mu0, s=0)
 sraEpiTimeseries(beta, delta=rep(0, length(beta)), mu0=0, logvarA0=0, logvarE0=0, 
 	logNe=log(1000), logvarM=log(1.e-20), 
-	logepsilon=0, logminusepsilon=NA, logvarepsilon=0)
+	logepsilon=0, logminusepsilon=-99, logvarepsilon=0)
 
 }
 \arguments{

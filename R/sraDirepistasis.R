@@ -57,12 +57,12 @@ function (sradata, start = NULL, fixed = NULL, macroE = FALSE,
     if (AIC.pos < AIC.neg) {
         fit <- fit.pos
         start <- c(start, list(logepsilon = stats4::coef(fit.pos)[["logepsilon"]]))
-        fixed <- c(fixed, list(logminusepsilon = NA))
+        fixed <- c(fixed, list(logminusepsilon = -99))
     }
     else {
         fit <- fit.neg
         start <- c(start, list(logminusepsilon = stats4::coef(fit.neg)[["logminusepsilon"]]))
-        fixed <- c(fixed, list(logepsilon = NA))
+        fixed <- c(fixed, list(logepsilon = -99))
     }
     return(sraMakeObject(sradata = sradata, model = fit, start = start, 
         fixed = fixed, FUNtimeseries = sraEpiTimeseries))
