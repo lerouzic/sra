@@ -38,7 +38,7 @@ sraAutoregEvolv(sradata, active = c(FALSE, TRUE, FALSE, FALSE),
   
   The following summarizes the models developed in Le Rouzic et al. 2010. 
   
-  The mean of the population \eqn{\mu}{mu} changes according to the Lande equation (Lande \& Arnold 1983):
+  The mean of the population \eqn{\mu}{mu} changes according to the Lande equation (Lande and Arnold 1983):
   
   \deqn{\mu(t+1) = \mu(t) + VarA(t)*\beta(t),}
 
