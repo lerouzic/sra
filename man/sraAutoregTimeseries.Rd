@@ -60,7 +60,6 @@ sraEpiTimeseries(beta, delta=rep(0, length(beta)), mu0=0, logvarA0=0, logvarE0=0
   \item{kc}{See \code{\link{sraCstvar}} for the description of the model parameters. }
   \item{kg}{See \code{\link{sraCstvar}} for the description of the model parameters. }
   \item{o}{See \code{\link{sraCstvar}} for the description of the model parameters. }
-  \item{logs2}{See \code{\link{sraCstvar}} for the description of the model parameters. }
   \item{logepsilon}{See \code{\link{sraCstvar}} for the description of the model parameters. }
   \item{logminusepsilon}{See \code{\link{sraCstvar}} for the description of the model parameters. }
   \item{logvarepsilon}{See \code{\link{sraCstvar}} for the description of the model parameters. }
